@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: crud-service
+  namespace: pfinal
+spec:
+  selector:
+    app: crud  # Selector que coincide con las labels del Deployment
+  ports:
+  - port: 8080  # Puerto del servicio
+    targetPort: 9055  # Puerto del contenedor
+  type: ClusterIP  # Tipo de servicio
