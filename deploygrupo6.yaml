@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crud
+  labels:
+    app: crud
+spec:
+  replicas: 2  # Configuramos el número de réplicas.
+  selector:
+    matchLabels:
+      app: crud
+  template:
+    metadata:
+      labels:
+        app: crud
+    spec:
+      containers:
+      - name: crud
+        image: anndocker2020/crud:v1  # Imagen del contenedor.
+        ports:
+        - containerPort: 9055  # Puerto expuesto dentro del contenedor.
